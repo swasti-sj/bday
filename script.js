@@ -9,6 +9,7 @@ const card = document.querySelector(".card");
 const blowBtn = document.getElementById("blowBtn");
 const flame = document.querySelector(".flame");
 const wish = document.getElementById("wish");
+const specialMessage = document.getElementById("specialMessage");
 
 passForm.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -28,6 +29,7 @@ passForm.addEventListener("submit", (e) => {
 blowBtn.addEventListener("click", () => {
   flame.classList.add("out");
   wish.classList.remove("hidden");
+  specialMessage.classList.remove("hidden");
   blowBtn.disabled = true;
   blowBtn.textContent = "wish made 🌟";
   burstConfetti();

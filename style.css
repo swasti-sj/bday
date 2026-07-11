@@ -349,6 +349,13 @@ body {
   line-height: 1.5;
 }
 
+.lines.special {
+  margin-top: 18px;
+  background: rgba(255, 214, 224, 0.55);
+  border-color: rgba(255, 92, 138, 0.4);
+  animation: pop 0.5s ease;
+}
+
 .footer-note {
   margin-top: 26px;
   font-family: 'Caveat', cursive;
