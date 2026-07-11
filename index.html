@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>happy birthday priyanshuuuuu 🎂</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- floating background hearts -->
+  <div class="bg-hearts" id="bgHearts"></div>
+
+  <!-- ===== LOCK SCREEN ===== -->
+  <section id="lockScreen" class="screen">
+    <div class="card">
+      <div class="balloon">🎈</div>
+      <h1 class="title">happy birthday<br><span class="name">pikachuu</span></h1>
+      <p class="sub">a lil something for my <span class="hl">cutiee</span> 🩷</p>
+
+      <form id="passForm" autocomplete="off">
+        <input
+          type="password"
+          id="passInput"
+          inputmode="numeric"
+          maxlength="4"
+          placeholder="enter the secret code"
+          aria-label="passcode"
+        />
+        <button type="submit">open 🎁</button>
+      </form>
+      <p id="hint" class="hint">psst... you know it, my babyyy 🥺</p>
+      <p id="errorMsg" class="error"></p>
+    </div>
+  </section>
+
+  <!-- ===== BIRTHDAY SCREEN ===== -->
+  <section id="partyScreen" class="screen hidden">
+    <canvas id="confetti"></canvas>
+
+    <div class="party-content">
+      <h1 class="party-title">HAPPYYY BIRTHDAY</h1>
+      <h2 class="party-name">priyanshuuuuu 🎉</h2>
+
+      <div class="cake-wrap">
+        <div class="cake">
+          <div class="flame"></div>
+          <div class="candle"></div>
+          <div class="layer top">
+            <span>🍓</span><span>🍒</span><span>🍓</span>
+          </div>
+          <div class="layer middle"></div>
+          <div class="layer bottom"></div>
+          <div class="plate"></div>
+        </div>
+        <button id="blowBtn">blow the candle 🕯️</button>
+      </div>
+
+      <div id="wish" class="wish hidden">✨ make a wish, my lovee ✨</div>
+
+      <div class="lines">
+        <p>to the boy who makes my whole world softer, happy birthday my <span class="hl">lovee</span> 💗</p>
+        <p>i hope today spoils you the way you spoil everyone around you, my <span class="hl">babyyy</span> 🍰</p>
+        <p>every year with you is my favorite one yet, <span class="hl">cutiee</span> 🌸</p>
+        <p>here's to more silly voice notes, more late night calls, and forever being your person 🎈</p>
+        <p>i love you more than words, more than cake, more than anything, <span class="hl">pikachuu</span> 🐹💛</p>
+      </div>
+
+      <div class="footer-note">made with all my love, just for you 🩵</div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
