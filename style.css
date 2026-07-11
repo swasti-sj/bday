@@ -349,11 +349,56 @@ body {
   line-height: 1.5;
 }
 
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  background: rgba(107, 69, 80, 0.45);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: fadeIn 0.25s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal {
+  position: relative;
+  max-width: 480px;
+  width: 100%;
+  animation: pop 0.35s ease;
+}
+
+.close-btn {
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: #ff5c8a;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(255, 92, 138, 0.45);
+  transition: transform 0.15s;
+}
+
+.close-btn:hover {
+  transform: scale(1.1) rotate(90deg);
+}
+
 .lines.special {
-  margin-top: 18px;
-  background: rgba(255, 214, 224, 0.55);
+  background: #fff5f7;
   border-color: rgba(255, 92, 138, 0.4);
-  animation: pop 0.5s ease;
+  box-shadow: 0 20px 60px rgba(255, 143, 171, 0.4);
 }
 
 .footer-note {
