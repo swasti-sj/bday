@@ -15,7 +15,7 @@ const flame = document.querySelector(".flame");
 const wish = document.getElementById("wish");
 const specialOverlay = document.getElementById("specialOverlay");
 const closeModal = document.getElementById("closeModal");
-const giftBox = document.getElementById("giftBox");
+const giftOverlay = document.getElementById("giftOverlay");
 const giftBtn = document.getElementById("giftBtn");
 const videoOverlay = document.getElementById("videoOverlay");
 const closeVideoModal = document.getElementById("closeVideoModal");
@@ -47,13 +47,13 @@ blowBtn.addEventListener("click", () => {
 
 closeModal.addEventListener("click", () => {
   specialOverlay.classList.add("hidden");
-  giftBox.classList.remove("hidden");
+  giftOverlay.classList.remove("hidden");
 });
 
 specialOverlay.addEventListener("click", (e) => {
   if (e.target === specialOverlay) {
     specialOverlay.classList.add("hidden");
-    giftBox.classList.remove("hidden");
+    giftOverlay.classList.remove("hidden");
   }
 });
 
@@ -75,6 +75,7 @@ function getEmbedHtml(url) {
 }
 
 giftBtn.addEventListener("click", () => {
+  giftOverlay.classList.add("hidden");
   videoContainer.innerHTML = getEmbedHtml(VIDEO_URL);
   videoOverlay.classList.remove("hidden");
   burstConfetti();

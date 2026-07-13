@@ -438,12 +438,21 @@ body {
 
 /* Video modal */
 .video-modal {
-  max-width: 720px;
+  max-width: none;
+  width: 96vw;
+  height: 92vh;
+  display: flex;
+}
+
+.video-modal .close-btn {
+  top: -18px;
+  right: -18px;
+  z-index: 2;
 }
 
 .video-container {
   width: 100%;
-  aspect-ratio: 16 / 9;
+  height: 100%;
   border-radius: 18px;
   overflow: hidden;
   background: #000;
