@@ -1,5 +1,9 @@
 const PASSCODE = "2104";
 
+// paste the video link here once you have it (YouTube/youtu.be link, Google Drive link, or a direct .mp4 link)
+const VIDEO_URL =
+  "https://drive.google.com/file/d/1QWKFVVvBNujtze_iDInkzeETyui4H7ur/view?usp=drivesdk";
+
 const lockScreen = document.getElementById("lockScreen");
 const partyScreen = document.getElementById("partyScreen");
 const passForm = document.getElementById("passForm");
@@ -11,6 +15,11 @@ const flame = document.querySelector(".flame");
 const wish = document.getElementById("wish");
 const specialOverlay = document.getElementById("specialOverlay");
 const closeModal = document.getElementById("closeModal");
+const giftBox = document.getElementById("giftBox");
+const giftBtn = document.getElementById("giftBtn");
+const videoOverlay = document.getElementById("videoOverlay");
+const closeVideoModal = document.getElementById("closeVideoModal");
+const videoContainer = document.getElementById("videoContainer");
 
 passForm.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -38,11 +47,48 @@ blowBtn.addEventListener("click", () => {
 
 closeModal.addEventListener("click", () => {
   specialOverlay.classList.add("hidden");
+  giftBox.classList.remove("hidden");
 });
 
 specialOverlay.addEventListener("click", (e) => {
   if (e.target === specialOverlay) {
     specialOverlay.classList.add("hidden");
+    giftBox.classList.remove("hidden");
+  }
+});
+
+function getEmbedHtml(url) {
+  if (!url) {
+    return '<p class="video-placeholder">the video link isn\'t added yet 🥹</p>';
+  }
+  const youtubeMatch = url.match(
+    /(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/))([\w-]+)/
+  );
+  if (youtubeMatch) {
+    return `<iframe src="https://www.youtube.com/embed/${youtubeMatch[1]}?autoplay=1" title="video" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
+  }
+  const driveMatch = url.match(/drive\.google\.com\/file\/d\/([\w-]+)/);
+  if (driveMatch) {
+    return `<iframe src="https://drive.google.com/file/d/${driveMatch[1]}/preview" title="video" allow="autoplay" allowfullscreen></iframe>`;
+  }
+  return `<video src="${url}" controls autoplay playsinline></video>`;
+}
+
+giftBtn.addEventListener("click", () => {
+  videoContainer.innerHTML = getEmbedHtml(VIDEO_URL);
+  videoOverlay.classList.remove("hidden");
+  burstConfetti();
+});
+
+closeVideoModal.addEventListener("click", () => {
+  videoOverlay.classList.add("hidden");
+  videoContainer.innerHTML = "";
+});
+
+videoOverlay.addEventListener("click", (e) => {
+  if (e.target === videoOverlay) {
+    videoOverlay.classList.add("hidden");
+    videoContainer.innerHTML = "";
   }
 });
 

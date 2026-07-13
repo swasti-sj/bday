@@ -401,6 +401,72 @@ body {
   box-shadow: 0 20px 60px rgba(255, 143, 171, 0.4);
 }
 
+/* Gift box */
+.gift-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin: 30px 0;
+  animation: pop 0.5s ease;
+}
+
+.gift-btn {
+  border: none;
+  background: none;
+  font-size: 4rem;
+  cursor: pointer;
+  animation: wiggle 1.6s ease-in-out infinite;
+  filter: drop-shadow(0 8px 16px rgba(255, 92, 138, 0.45));
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-6deg); }
+  50% { transform: rotate(6deg); }
+}
+
+.gift-btn:hover {
+  animation-play-state: paused;
+  transform: scale(1.1);
+}
+
+.gift-label {
+  font-family: 'Caveat', cursive;
+  font-size: 1.3rem;
+  color: var(--pink-deep);
+}
+
+/* Video modal */
+.video-modal {
+  max-width: 720px;
+}
+
+.video-container {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 20px 60px rgba(255, 143, 171, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-container iframe,
+.video-container video {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.video-placeholder {
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  padding: 20px;
+  text-align: center;
+}
+
 .footer-note {
   margin-top: 26px;
   font-family: 'Caveat', cursive;
